@@ -1,0 +1,425 @@
+h2.student-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p.bullet-comment {
+    text-align: center;
+    width: 100%;
+}
+
+p.comment {
+    text-align: center;
+    width: 100%;
+}
+
+div.upload-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+div.upload-progress {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.classroom-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div.bullet-selected {
+    background: lightpink;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+div.bullet-super {
+    width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    padding-top: 10px;
+}
+
+div.bullet-comment-content {
+    width: 100%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.add-change-comment {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.add-comment-save {
+    width: 50%;
+    border-style: solid;
+    color: green;
+}
+
+div.add-comment-cancel {
+    width: 50%;
+    border-style: solid;
+    color: red;
+}
+
+div.add-comment-submit {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.bullet {
+    background: azure;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+div.bullet-click {
+    width: 10%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.bullet-content {
+    width: 60%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.bullet-edit {
+    width: 10%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.bullet-delete {
+    width: 10%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.bullet-comment {
+    width: 10%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.rubric {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    padding-top: 10px;
+}
+
+div.student-menu {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+}
+
+div.add-bullet {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightpink;
+}
+
+div.add-change-bullet {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.add-bullet-input {
+    width: 100%;
+}
+
+div.add-bullet-save {
+    width: 50%;
+    border-style: solid;
+    color: green;
+}
+
+div.add-bullet-cancel {
+    width: 50%;
+    border-style: solid;
+    color: red;
+}
+
+div.add-bullet-submit {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.comment-content {
+    width: 45%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.go-to-classroom {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightseagreen;
+}
+
+div.completed-mark {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: green;
+}
+
+div.incompleted-mark {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: orange;
+}
+
+div.save-progress {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightgray;
+}
+
+div.classroom-menu {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+}
+
+div.room {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    padding-top: 10px;
+}
+
+div.add-student {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightpink;
+}
+
+div.add-change-student {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.add-bullet-student {
+    width: 100%;
+}
+
+div.add-student-save {
+    width: 50%;
+    border-style: solid;
+    color: green;
+}
+
+div.add-student-cancel {
+    width: 50%;
+    border-style: solid;
+    color: red;
+}
+
+div.add-student-submit {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.change-fullscore {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightseagreen;
+}
+
+div.add-change-score {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.add-score-save {
+    width: 50%;
+    border-style: solid;
+    color: green;
+}
+
+div.add-score-cancel {
+    width: 50%;
+    border-style: solid;
+    color: red;
+}
+
+div.add-score-submit {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.report {
+    border-style: solid;
+    width: 25%;
+    text-align: center;
+    background: lightblue;
+}
+
+div.completed-student {
+    border-style: solid;
+    width: 30%;
+    text-align: center;
+    background: green;
+    display: flex;
+    flex-direction: row;
+}
+
+div.incompleted-student {
+    border-style: dashed;
+    width: 30%;
+    text-align: center;
+    background: orange;
+    display: flex;
+    flex-direction: row;
+}
+
+div.student-name {
+    width: 70%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.student-edit {
+    width: 15%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.student-delete {
+    width: 15%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.report-menu {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+}
+
+div.go-to-classroom-report {
+    border-style: solid;
+    width: 100%;
+    text-align: center;
+    background: lightseagreen;
+}
+
+div.report-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+div.report-wildcard {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.report-wildcard-save {
+    width: 100%;
+    border-style: solid;
+    color: green;
+}
+
+div.report-error-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    padding-top: 10px;
+}
+
+div.report-error-single-top {
+    background: orange;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+div.report-error-single {
+    background: azure;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+div.report-error-cnt {
+    width: 20%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.report-error-content {
+    width: 80%;
+    text-align: center;
+    border-style: solid;
+}
