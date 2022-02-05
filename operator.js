@@ -1178,7 +1178,39 @@
         
         var room = document.createElement("div");
         room.className = "room";
+        var student_lst = [];
         for(const [name, s] of classroom._students.entries()){
+            student_lst.push({"name": name, "student": s});
+        }
+        student_lst.sort(function(a, b){
+            var a_arr = a.name.split(" ");
+            var b_arr = b.name.split(" ");
+            var a_first = a_arr[0];
+            var b_first = b_arr[0];
+            var a_last = a_arr[a_arr.length - 1];
+            var b_last = b_arr[b_arr.length - 1];
+            for(var i = 1; i < a_arr.length - 1; i++){
+                a_first += " " + a_arr[i];
+            }
+            for(var i = 1; i < b_arr.length - 1; i++){
+                b_first += " " + b_arr[i];
+            }
+            if(a_last < b_last){
+                return -1;
+            } else if(a_last > b_last){
+                return 1;
+            } else{
+                if(a_first < b_first){
+                    return -1;
+                } else if(a_first > b_first){
+                    return 1;
+                }
+            }
+            return 0;
+        });
+        for(var i = 0; i < student_lst.length; i++){
+            var name = student_lst[i].name;
+            var s = student_lst[i].student;
             var class_name = "incompleted-student";
             if(s._complete){
                 class_name = "completed-student";
