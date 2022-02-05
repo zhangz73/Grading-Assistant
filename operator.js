@@ -1148,11 +1148,20 @@
         body.className = "classroom";
         var menu = create_classroom_menu();
         body.appendChild(menu);
+                
+        var student_cnt = 0;
+        var complete_cnt = 0;
+        for(const [name, s] of classroom._students.entries()){
+            if(s._complete){
+                complete_cnt++;
+            }
+            student_cnt++;
+        }
 
         var header = document.createElement("div");
         header.className = "classroom-header";
         var title = document.createElement("h2");
-        title.textContent = "Classroom";
+        title.textContent = "Classroom (" + complete_cnt + "/" + student_cnt + " Completed)";
         var metrics = document.createElement("h3");
         metrics.textContent = get_score_metrics();
         header.appendChild(title);
