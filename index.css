@@ -401,7 +401,7 @@ div.report-error-single-top {
     text-align: center;
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 100%;
 }
 
 div.report-error-single {
@@ -409,7 +409,7 @@ div.report-error-single {
     text-align: center;
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 100%;
 }
 
 div.report-error-cnt {
@@ -422,4 +422,26 @@ div.report-error-content {
     width: 80%;
     text-align: center;
     border-style: solid;
+}
+
+div.report-error-super {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    padding-top: 10px;
+}
+
+div.report-error-names {
+    width: 100%;
+    text-align: center;
+    border-style: solid;
+}
+
+.hidden {
+    display: none;
 }

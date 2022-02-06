@@ -420,6 +420,8 @@
     
     var report_wildcard = "*";
     
+    var report_error_hide = new Map();
+    
     var output_dir = null;
     // Global Variables Stop Here
 
@@ -1290,17 +1292,17 @@
                 var error = classroom._rubric.getBullet(id);
                 if(wildcard_match(wildcard, error.question)){
                     if(!error_compendium.has(id)){
-                        error_compendium.set(id, 0);
+                        error_compendium.set(id, []);
                     }
-                    error_compendium.set(id, error_compendium.get(id) + 1);
+                    error_compendium.get(id).push(name);
                 }
             }
         }
         var lst = [];
-        for(const [id, cnt] of error_compendium.entries()){
-            lst.push({"id": id, "cnt": cnt});
+        for(const [id, name_lst] of error_compendium.entries()){
+            lst.push({"id": id, "names": name_lst});
         }
-        lst.sort((a, b) => b.cnt - a.cnt);
+        lst.sort((a, b) => b.names.length - a.names.length);
         return lst;
     }
                              
@@ -1352,18 +1354,29 @@
         body.appendChild(div_header);
         
         var error_compendium = summarize_mistakes(report_wildcard);
-        error_compendium.unshift({"id": "n/a", "cnt": "Frequency"});
+        error_compendium.unshift({"id": "n/a", "names": []});
                 
         var div_errors = document.createElement("div");
         div_errors.className = "report-error-list";
-                
+                        
         for(var i = 0; i < error_compendium.length; i++){
             var id = error_compendium[i].id;
-            var cnt = error_compendium[i].cnt;
-            var sentence = "Mistake"
+            var cnt = error_compendium[i].names.length;
+            var name_lst = error_compendium[i].names;
+            var sentence = "Mistake";
+            var comment = "";
             if(id !== "n/a"){
                 var error = classroom._rubric.getBullet(id);
                 sentence = error.score + ": " + error.question + ". " + cap(error.content);
+                comment = name_lst[0];
+                for(var j = 1; j < name_lst.length; j++){
+                    comment += ", " + name_lst[j];
+                }
+                if(!report_error_hide.has(id)){
+                    report_error_hide.set(id, true);
+                }
+            } else{
+                cnt = "Frequency";
             }
             var div_error_single = document.createElement("div");
             if(id !== "n/a"){
@@ -1373,13 +1386,51 @@
             }
             var div_error_cnt = document.createElement("div");
             div_error_cnt.className = "report-error-cnt";
+            div_error_cnt.id = "report-error-cnt-" + id;
             div_error_cnt.textContent = cnt;
+            if(id !== "n/a"){
+                div_error_cnt.onclick = function(){
+                    var curr_id = parseInt(this.id.split("-")[3].trim());
+                    if(report_error_hide.get(curr_id)){
+                        report_error_hide.set(curr_id, false);
+                    } else{
+                        report_error_hide.set(curr_id, true);
+                    }
+                    render_report();
+                }
+            }
             var div_error_content = document.createElement("div");
             div_error_content.className = "report-error-content";
             div_error_content.textContent = sentence;
             div_error_single.appendChild(div_error_cnt);
             div_error_single.appendChild(div_error_content);
-            div_errors.appendChild(div_error_single);
+            
+            var div_both = document.createElement("div");
+            div_both.className = "report-error-super";
+            div_both.appendChild(div_error_single);
+            var comment_div = document.createElement("div");
+            comment_div.id = "report-error-" + id + "-div";
+            var comment_p = document.createElement("p");
+            comment_p.id = "report-error-" + id + "-p";
+            comment_div.classList.add("report-error-names");
+            comment_p.classList.add("report-error-names");
+            if(id !== "n/a"){
+                if(report_error_hide.get(id)){
+                    comment_div.classList.add("hidden");
+                    comment_p.classList.add("hidden");
+                } else{
+                    comment_div.classList.remove("hidden");
+                    comment_p.classList.remove("hidden");
+                }
+            }
+            var description_comment = document.createTextNode("Names: " + comment);
+            comment_p.appendChild(description_comment);
+            comment_div.appendChild(comment_p);
+            if(id !== "n/a"){
+                div_both.appendChild(comment_div);
+            }
+            
+            div_errors.appendChild(div_both);
         }
                 
         body.appendChild(div_errors);
