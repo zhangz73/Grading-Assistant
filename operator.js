@@ -185,22 +185,30 @@
         update_score(){
             this._fullScore = this._rubric._fullScore;
             var curr = this._fullScore;
+            var to_remove = [];
             for(const [mistake, val] of this._mistakes){
                 if(this._rubric.hasBullet(mistake)){
                     var s = parseFloat(this._rubric.getBullet(mistake)._score);
                     curr += s;
+                } else{
+                    to_remove.push(mistake);
                 }
+            }
+            for(var i = 0; i < to_remove.length; i++){
+                this._mistakes.delete(to_remove[i]);
             }
             this._score = curr;
         }
         
         get score(){
             this.update_score();
+            this.update_comment();
             return this._score;
         }
         
         get_score(){
             this.update_score();
+            this.update_comment();
             return this._score;
         }
         
@@ -242,6 +250,7 @@
         
         get_result(){
             this.update_score();
+            this.update_comment();
             var status = "Incomplete";
             if(this._complete){
                 status = "Completed";
@@ -738,6 +747,8 @@
         // Highlight the ones that are selected for this student
         // Display comments if present
         // Print additional comments if not empty
+        s.update_score();
+        s.update_comment();
         var body = document.createElement("div");
         body.className = "student";
         var menu = create_student_menu();
@@ -832,6 +843,7 @@
     
     function update_page_student(curr_student){
         classroom.get_single_student(curr_student).update_score();
+        classroom.get_single_student(curr_student).update_comment();
         curr_body = render_student(classroom.get_single_student(curr_student));
         $("body").textContent = "";
         $("body").appendChild(curr_body);
