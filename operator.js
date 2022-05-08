@@ -198,6 +198,9 @@
                 this._mistakes.delete(to_remove[i]);
             }
             this._score = curr;
+            if(this._score < 0){
+                this._score = 0;
+            }
         }
         
         get score(){
