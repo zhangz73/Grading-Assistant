@@ -1,0 +1,28 @@
+Full Score: 100
+
+Example Student1: 97
+Completed
+-1: Q1b. Minor computation errors. #comment#: The numerator of the trace should be p rather than 1.
+-1: Q1d(iv). ||x||^{-2} is not a constant and therefore E[] cannot be removed.
+-1: Q1e. The MSE of the James-Stein estimator is NOT monotonic as p increases. Recall that its MSE is quadratic.
+
+Example Student2: 94
+Completed
+-4: Q1e. Missing or severely incorrect explanation.
+-2: Q2c. Missing or misunderstanding the keyword "convex". #comment#: Differentiable is completely different from convexity. In this question, both objective functions are differentiable but only q=4 is convex.
+
+Example Student3: 99
+Completed
+-1: Q1e. The MSE of the James-Stein estimator is NOT monotonic as p increases. Recall that its MSE is quadratic.
+
+Example Student4: 100
+Completed
+Final Words: Great Work!
+
+Example Student5: 100
+Completed
+Final Words: Great Work!
+
+Example Student6: 99
+Completed
+-1: Q1e. Missing discussions for the MSE of the scaled estimator and/or the James-Stein estimator.
